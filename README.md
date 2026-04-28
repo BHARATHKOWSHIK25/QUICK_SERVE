@@ -4,6 +4,8 @@
 
 **Quick Serve** features a dual-purpose QR Token (payment receipt + order token), OTP login, live tracking, and a dedicated partner dashboard. Built with React Native, Node.js & Google Gemini AI.
 
+MVP WORKING LINK : https://quickserve-mvp-dev.web.app/
+
 ## 🚀 Key Features
 
 *   **Pre-Order Food:** Skip the waiting time! Order your food right from the app before arriving at the restaurant.
