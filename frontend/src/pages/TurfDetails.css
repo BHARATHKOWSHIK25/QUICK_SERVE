@@ -1,0 +1,165 @@
+.turf-details-page {
+  padding-bottom: 4rem;
+}
+
+.turf-cover {
+  position: relative;
+  height: 350px;
+  width: 100%;
+  margin-bottom: -60px; /* pull container up */
+}
+
+.turf-cover-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.turf-cover-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.8) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: 80px;
+}
+
+.turf-back-btn {
+  color: white;
+  border-color: rgba(255,255,255,0.3);
+  margin-bottom: 1.5rem;
+}
+.turf-back-btn:hover {
+  background: rgba(255,255,255,0.1);
+  color: white;
+}
+
+.turf-header-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  color: white;
+}
+
+.turf-badge {
+  font-size: 2.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.turf-title {
+  color: white;
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+.turf-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.turf-meta-dot {
+  opacity: 0.5;
+}
+
+/* Specific sports overrides */
+.date-chip.sports-active { background: var(--blue); border-color: var(--blue); color: #fff; font-weight: 700; }
+.slot-btn.sports-active { background: var(--blue); border-color: var(--blue); color: #fff; }
+
+.sports-input:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2); }
+.sports-btn:hover { background: #2563eb !important; border-color: #2563eb !important; }
+
+/* Reusing some classes from Booking.css but making them scoped or global if needed */
+/* The layout uses .booking-layout and .booking-success which can be kept here or remain in a shared file. */
+
+.booking-layout {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 2rem;
+  align-items: start;
+  position: relative;
+  z-index: 10;
+}
+
+/* Slots */
+.slot-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.6rem;
+}
+.date-chip,
+.slot-btn {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  padding: 0.75rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: center;
+}
+.date-chip:hover,
+.slot-btn:hover { border-color: var(--border-hover); color: var(--text-primary); transform: translateY(-1px); }
+
+/* Summary box */
+.summary-box { background: var(--bg-input); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 1.25rem; margin-bottom: 1.25rem; }
+.summary-service { font-size: 1.1rem; font-weight: 700; color: var(--text-primary); margin-bottom: 1rem; }
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  padding: 0.4rem 0;
+}
+.summary-row strong { color: var(--text-primary); font-weight: 600; }
+.total-row { font-size: 1.1rem; font-weight: 800; color: var(--text-primary) !important; margin-top: 0.5rem; }
+.total-row strong { font-size: 1.2rem; }
+
+/* Success */
+.booking-success {
+  max-width: 540px;
+  margin: 4rem auto;
+  text-align: center;
+  animation: slideUp 0.4s ease;
+  padding-top: 40px;
+}
+.success-icon { font-size: 4.5rem; margin-bottom: 1.5rem; animation: pop 0.4s ease; }
+.success-details {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  margin-top: 2rem;
+  text-align: left;
+  box-shadow: var(--shadow-sm);
+}
+.success-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  padding: 0.6rem 0;
+  border-bottom: 1px dashed var(--border);
+}
+.success-row:last-child { border-bottom: none; }
+.success-row strong { color: var(--text-primary); }
+
+@media (max-width: 900px) {
+  .booking-layout { grid-template-columns: 1fr; }
+  .slot-grid { grid-template-columns: repeat(3, 1fr); }
+  .turf-title { font-size: 2rem; }
+  .turf-cover { height: 300px; margin-bottom: -40px; }
+  .turf-cover-overlay { padding-bottom: 60px; }
+}
+@media (max-width: 480px) {
+  .slot-grid { grid-template-columns: repeat(2, 1fr); }
+  .turf-title { font-size: 1.6rem; }
+}

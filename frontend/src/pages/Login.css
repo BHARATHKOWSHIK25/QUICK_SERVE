@@ -1,0 +1,144 @@
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 70px);
+  padding: 2rem;
+}
+
+.dominos-login {
+  background: var(--bg-card);
+  padding: 3rem 2.5rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  width: 100%;
+  max-width: 420px;
+  animation: slideUp 0.4s ease-out;
+  border: 1px solid var(--border);
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.login-header .logo-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+
+.login-header h2 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  font-family: var(--font-display);
+}
+
+.login-header p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* ── Domino's Input Style ── */
+.dominos-input-group {
+  display: flex;
+  align-items: center;
+  background: var(--bg-input);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease;
+}
+
+.dominos-input-group:focus-within {
+  border-color: #0056a0; /* Domino's Blue */
+  box-shadow: 0 0 0 3px rgba(0, 86, 160, 0.2);
+}
+
+.country-code {
+  color: var(--text-secondary);
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-right: 0.8rem;
+  padding-right: 0.8rem;
+  border-right: 1.5px solid var(--border);
+}
+
+.dominos-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  font-size: 1.1rem;
+  font-weight: 600;
+  outline: none;
+  padding: 0.8rem 0;
+  width: 100%;
+}
+
+.dominos-input::placeholder {
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* ── Domino's Button Style ── */
+.dominos-btn {
+  background: #0056a0; /* Domino's Blue */
+  color: white;
+  border-radius: var(--radius-md);
+  font-size: 1.1rem;
+  padding: 1rem;
+  margin-top: 0.5rem;
+  box-shadow: 0 4px 15px rgba(0, 86, 160, 0.3);
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.dominos-btn:hover {
+  background: #004a8b;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 86, 160, 0.4);
+}
+
+.btn-block {
+  width: 100%;
+}
+
+/* ── Footer ── */
+.login-footer {
+  text-align: center;
+}
+
+.toggle-auth-btn {
+  background: none;
+  border: none;
+  color: #0056a0;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 0;
+}
+
+.toggle-auth-btn:hover {
+  text-decoration: underline;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 480px) {
+  .dominos-login {
+    padding: 2.5rem 1.5rem;
+  }
+}

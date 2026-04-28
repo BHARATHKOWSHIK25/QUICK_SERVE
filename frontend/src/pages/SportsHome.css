@@ -1,0 +1,11 @@
+.sports-home .hero-badge {
+  background: rgba(59, 130, 246, 0.1);
+  border-color: rgba(59, 130, 246, 0.3);
+  color: var(--blue);
+}
+
+.sports-home .category-chip.sports-active {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: white;
+}

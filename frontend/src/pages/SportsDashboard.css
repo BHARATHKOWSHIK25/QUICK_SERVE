@@ -1,0 +1,6 @@
+/* Reusing a lot of styles from KitchenDashboard.css */
+@import './KitchenDashboard.css';
+
+.sports-dashboard-page {
+  padding-bottom: 4rem;
+}
