@@ -288,4 +288,32 @@ router.get('/history', (req, res) => {
   res.json({ success: true, orders: userOrders, bookings: userBookings });
 });
 
+// ── AI ASSISTANT ──────────────────────────────────────────────────────────────
+
+// POST /api/ask-gemini
+router.post('/ask-gemini', (req, res) => {
+  const { query } = req.body;
+  if (!query) return res.status(400).json({ success: false, message: 'Query is required' });
+
+  const q = query.toLowerCase();
+  let answer = "I'm your AI assistant! Try asking for 'biryani', 'pizza', 'cricket', or 'swimming'.";
+
+  if (q.includes('biryani')) {
+    answer = "Based on local ratings, I highly recommend 'AL Ajaib Restaurant' or 'Sri Anjaneya Biryani' for the best Biryani in Guntur! Would you like me to show you their menus?";
+  } else if (q.includes('pizza') || q.includes('burger')) {
+    answer = "For fast food and amazing pizzas, you should check out 'NOVEL Hotel Restaurant' or 'Welcomhotel by ITC'.";
+  } else if (q.includes('cricket') || q.includes('turf')) {
+    answer = "There are several great cricket turfs available today! 'Game on' at Siddharth Nagar and 'KSR Continuum' have open slots this evening.";
+  } else if (q.includes('swim') || q.includes('pool')) {
+    answer = "If you're looking for a swim, 'NTR Municipal Swimming Pool' is very affordable, or you can try 'Makineni Swimming Academy' for a premium experience.";
+  } else if (q.includes('hello') || q.includes('hi')) {
+    answer = "Hello! I'm your Quick Serve Gemini Assistant. How can I make your food or sports booking experience better today?";
+  }
+
+  // Simulate network delay for AI thinking effect
+  setTimeout(() => {
+    res.json({ success: true, answer });
+  }, 1200);
+});
+
 module.exports = router;

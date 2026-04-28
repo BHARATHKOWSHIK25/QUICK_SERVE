@@ -29,4 +29,5 @@ export const api = {
   getSportsBookings: () => request('/sports/bookings'),
   updateSportsBooking: (id, status) => request(`/sports/bookings/${id}`, { method: 'PUT', body: JSON.stringify({ status }) }),
   getHistory: (phone) => request(`/history?phone=${phone}`),
+  askGemini: (query) => request('/ask-gemini', { method: 'POST', body: JSON.stringify({ query }) }),
 };

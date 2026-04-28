@@ -12,6 +12,7 @@ import TurfDetails from './pages/TurfDetails';
 import SportsDashboard from './pages/SportsDashboard';
 import KitchenDashboard from './pages/KitchenDashboard';
 import Login from './pages/Login';
+import AIAssistant from './components/AIAssistant';
 import './index.css';
 
 const ProtectedRoute = ({ children }) => {
@@ -46,6 +47,7 @@ export default function App() {
             </div>
           } />
         </Routes>
+        <AIAssistant />
       </BrowserRouter>
     </CartProvider>
   );
